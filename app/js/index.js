@@ -6,15 +6,25 @@ import {
 } from 'react-native';
 import About from '../js/scenes/About/';
 
+import {
+  NavigationProvider,
+  StackNavigation,
+} from '@expo/ex-navigation';
+
+import Router from './navigation/routes';
+
+
 export default class r10 extends Component {
-
-
 
   render() {
     return (
-      <View style={styles.container}>
-        <About />
-      </View>
+      <NavigationProvider router={Router}>
+        <StackNavigation 
+        id="root"
+        navigatorUID="root"
+        initialRoute={Router.getRoute('about')} 
+        />
+      </NavigationProvider>
     );
   }
 }

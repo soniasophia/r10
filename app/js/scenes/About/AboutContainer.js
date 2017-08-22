@@ -38,6 +38,12 @@ class AboutContainer extends Component {
 
   };
 
+  static route = {
+    navigationBar: {
+      title: 'About',
+    }
+  }
+
   render() {
     if (this.state.isLoading) {
       return (
