@@ -15,3 +15,15 @@ export const typography = {
   fontMain: 'Montserrat',
   fontMainLight: 'Montserrat-Light'
 };
+
+export const styles = {
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    
+  },
+
+  headerImage: {
+
+  }
+}

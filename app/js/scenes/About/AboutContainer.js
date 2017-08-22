@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import {
+  ActivityIndicator
+} from 'react-native';
 
 import About from './About';
 
@@ -7,13 +10,14 @@ class AboutContainer extends Component {
 
   constructor() {
     super();
+    
     this.state = {
       data: [],
       isLoading: true,
     };
   }
 
-componentDidMount() {
+  componentDidMount() {
     let endpoint = 'https://r10app-95fea.firebaseio.com/code_of_conduct.json';
     fetch(endpoint)
       // if fetch is successful, read our JSON out of the response
@@ -35,8 +39,15 @@ componentDidMount() {
   };
 
   render() {
-    return <About />;
-
+    if (this.state.isLoading) {
+      return (
+        <ActivityIndicator animating={true} size="small" color="black" />
+      );
+    } else {
+      return (
+        <About data={this.state.data} />
+      );
+    }
   }
 }
 
