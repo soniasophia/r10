@@ -5,7 +5,8 @@ import {
   StyleSheet,
   FlatList,
   Image,
-  View
+  View,
+  ScrollView
 } from 'react-native';
 
 import { styles } from './styles.js';
@@ -13,30 +14,35 @@ import { styles } from './styles.js';
 
 const About = ({ data }) => {
   return (
-    <View>
-      <View>
+    <ScrollView>
+    <View style={styles.container}>
+      <View style={styles.headerImage}>
         <Image
           source={require('.././../assets/images/r10_logo.png')} />
       </View>
       <View>
-        <Text>R10 is a conference that focuses on just about any topic related to dev.</Text>
+        <Text style={styles.header}>R10 is a conference that focuses on just about any topic related to dev.</Text>
       </View>
       <View>
-        <Text>Date & Venue</Text>
+        <Text style={styles.fonts}>Date & Venue</Text>
       </View>
       <View>
-        <Text>The R10 conference will take place on Tuesday, June 27th, 2017 in Vancouver, BC.</Text>
+        <Text style={styles.header}>The R10 conference will take place on Tuesday, June 27th, 2017 in Vancouver, BC.</Text>
+      </View>
+      <View>
+        <Text style={styles.fonts}>Code of Conduct</Text>
       </View>
       <FlatList
         data={data}
         renderItem={({ item }) =>
           <View style={styles.container}>
-            <Text>{item.title}</Text>
+            <Text style={styles.headings}>+ {item.title}</Text>
             <Text>{item.description}</Text>
           </View>}
         keyExtractor={(item, index) => index}
       />
     </View>
+    </ScrollView>
   );
 }
 

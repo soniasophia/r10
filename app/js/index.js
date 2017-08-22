@@ -12,7 +12,7 @@ export default class r10 extends Component {
 
   render() {
     return (
-      <View>
+      <View style={styles.container}>
         <About />
       </View>
     );
@@ -22,9 +22,9 @@ export default class r10 extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    // justifyContent: 'center',
+    // alignItems: 'center',
+    // marginTop: 20
   },
   welcome: {
     fontSize: 20,
