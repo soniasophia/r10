@@ -12,7 +12,6 @@ import { fetchSpeakerData } from '../../redux/modules/speaker';
 class SessionContainer extends Component {
   
     componentDidMount() {
-      // this.props.dispatch(fetchSessionData())
       this.props.dispatch(fetchSpeakerData())
     }
   
@@ -31,7 +30,7 @@ class SessionContainer extends Component {
         return (
           <Session 
           speakerData={this.props.speakerData}
-          data={this.props.data}
+          data={this.props.sessionData}
           />
         );
       }
@@ -41,7 +40,6 @@ class SessionContainer extends Component {
   function mapStateToProps(state) {
     return {
         isLoading: state.session.isLoading,
-        data: state.session.data,
         speakerData: state.speaker.data
     }
   }

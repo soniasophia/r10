@@ -20,13 +20,13 @@ const defaultRouteConfig = {
       fontFamily: typography.fontMain
     },
     // renderBackground: () => (
-  //     <LinearGradient
-  //       style={styles.linearGradient}
-  //       colors={['#9963ea', '#cf392a']}
-  //       start={{ x: 0.5, y: 0.25 }}
-  //       end={{ x: 0.0, y: 1.0 }}
-  //     />
-  //   )
+    //   <LinearGradient
+    //     style={styles.linearGradient}
+    //     colors={['#9963ea', '#cf392a']}
+    //     start={{ x: 0.5, y: 0.25 }}
+    //     end={{ x: 0.0, y: 1.0 }}
+    //   />
+    // )
   }
 }
 

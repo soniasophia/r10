@@ -28,6 +28,11 @@ export const styles = StyleSheet.create({
     backgroundColor: colors.lightGrey,
     padding: 10,
     paddingLeft: 15
-  }
+  },
 
+  // border: {
+  //   borderStyle: 'solid',
+  //   borderWidth: 0.5,
+  //   backgroundColor: colors.lightGrey
+  // }
 })
