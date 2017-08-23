@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import {fetchConductData} from '../../redux/modules/conduct';
+import { fetchConductData } from '../../redux/modules/conduct';
 import {
   ActivityIndicator
 } from 'react-native';
