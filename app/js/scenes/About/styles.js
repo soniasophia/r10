@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-import { typography } from '../../config/styles';
+import { colors, typography } from '../../config/styles';
 
 export const styles = StyleSheet.create({
     container: {
@@ -9,7 +9,8 @@ export const styles = StyleSheet.create({
     },
 
     header: {
-      margin: 10
+      margin: 10,
+      fontFamily: typography.fontMainLight
     },
   
     headerImage: {
@@ -24,12 +25,13 @@ export const styles = StyleSheet.create({
       fontWeight: 'bold',
       fontSize: 18,
       alignItems: 'flex-start',
-      margin: 10
-      
+      margin: 10,
+      fontFamily: typography.fontMain
     },
 
     headings: {
       fontWeight: 'bold',
-      color: '#9963ea'
+      color: '#9963ea',
+      fontFamily: typography.fontMain
     }
 });

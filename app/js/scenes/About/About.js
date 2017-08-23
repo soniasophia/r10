@@ -37,7 +37,7 @@ const About = ({ data }) => {
           renderItem={({ item }) =>
             <View style={styles.container}>
               <Text style={styles.headings}>+ {item.title}</Text>
-              <Text>{item.description}</Text>
+              <Text style={styles.header}>{item.description}</Text>
             </View>}
           keyExtractor={(item, index) => index}
         />
@@ -47,10 +47,7 @@ const About = ({ data }) => {
 }
 
 About.propTypes = {
-  
+  data: PropTypes.arrayOf(PropTypes.object).isRequired
 }
-
-
-
 
 export default About;

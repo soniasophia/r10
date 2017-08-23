@@ -3,6 +3,6 @@ import { conductReducer } from './modules/conduct';
 import { NavigationReducer } from '@expo/ex-navigation';
 
 export default combineReducers({ 
-  // conduct: conductReducer,
+  conduct: conductReducer,
   navigation: NavigationReducer
 });
