@@ -4,10 +4,12 @@ import {
   Text,
   View,
   SectionList,
-  TouchableOpacity
+  TouchableOpacity,
+  
 } from 'react-native';
 
 import Moment from 'moment';
+import { goToSession } from '../../lib/NavigationHelpers';
 
 import { styles } from './styles.js';
 
@@ -17,7 +19,7 @@ const Schedule = ({ data }) => {
       <SectionList
         keyExtractor={(item) => (item.session_id)}
         renderItem={({ item }) => (
-          <TouchableOpacity onPress={() => console.log('test')}>
+          <TouchableOpacity onPress={() => goToSession("schedule", item)}>
             <View style={styles.container}>
               <Text style={styles.header}>{item.title}</Text>
               <Text style={styles.subHeader}>{item.location}</Text>
@@ -34,7 +36,18 @@ const Schedule = ({ data }) => {
 }
 
 Schedule.propTypes = {
-  data: PropTypes.arrayOf(PropTypes.object).isRequired
+  data: PropTypes.arrayOf(PropTypes.shape({
+      data: PropTypes.arrayOf(PropTypes.shape({
+          description: PropTypes.string,
+          location: PropTypes.string,
+          session_id: PropTypes.string,
+          speaker: PropTypes.string,
+          start_time: PropTypes.number,
+          title: PropTypes.string
+      })),
+      title: PropTypes.number
+  })),
+  goToSession: PropTypes.func.isRequired
 }
 
 export default Schedule;

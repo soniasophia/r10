@@ -27,7 +27,9 @@ class ScheduleContainer extends Component {
       );
     } else {
       return (
-        <Schedule data={this.props.data}/>
+        <Schedule 
+        goToSession={(e)=> {this.goToSession(e)}}
+        data={this.props.data}/>
       );
     }
   }

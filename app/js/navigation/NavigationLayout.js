@@ -10,20 +10,33 @@ import { Text } from 'react-native';
 
 import Icon from 'react-native-vector-icons/Ionicons';
 import { colors, typography } from '../config/styles';
+import LinearGradient from 'react-native-linear-gradient';
+import { StyleSheet } from 'react-native';
 
 const defaultRouteConfig = {
   navigationBar: {
     tintColor: 'white',
     titleStyle: {
-      //change font with property here...
+      fontFamily: typography.fontMain
     },
     // renderBackground: () => (
-        // download package then link
-    //   //returning some component for the background...
-    // );
+  //     <LinearGradient
+  //       style={styles.linearGradient}
+  //       colors={['#9963ea', '#cf392a']}
+  //       start={{ x: 0.5, y: 0.25 }}
+  //       end={{ x: 0.0, y: 1.0 }}
+  //     />
+  //   )
   }
 }
 
+// const styles = StyleSheet.create({
+//   linearGradient: {
+//     flex: 1,
+//     paddingLeft: 15,
+//     paddingRight: 15,
+//   }
+// })
 
 class NavigationLayout extends Component {
 
@@ -39,7 +52,7 @@ class NavigationLayout extends Component {
       <TabNavigation
         id="main"
         navigatorUID="main"
-        initialTab="about"
+        initialTab="schedule"
         tabBarColor="black"
       >
         <TabItem
@@ -92,9 +105,9 @@ class NavigationLayout extends Component {
 
     return (
       <Icon
-      name={iconName}
-      size={24} 
-      color={color}
+        name={iconName}
+        size={24}
+        color={color}
       />
     );
   }
