@@ -11,7 +11,6 @@ export function loadSpeaker(speaker) {
   }
 }
 
-
 // THUNK FUNCTION
 export function fetchSpeakerData(speakerId) {
   return function(dispatch) {

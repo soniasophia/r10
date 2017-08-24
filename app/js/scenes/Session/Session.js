@@ -5,10 +5,13 @@ import {
   View,
   Image,
   TouchableOpacity,
+  Platform
 } from 'react-native';
 
 import Moment from 'moment';
 import { goToSpeaker } from '../../lib/NavigationHelpers';
+import Icon from 'react-native-vector-icons/Ionicons';
+import { createFave, deleteFave } from '../../config/models';
 
 import { styles } from './styles.js';
 
@@ -17,6 +20,7 @@ const Session = ({ speaker, data }) => {
     <View>
       <View>
         <Text style={styles.subHeader}>{data.location}</Text>
+        <Icon name={Platform.OS === 'ios' ? 'ios-heart' : 'md-heart'} size={20} color={'black'}/>
         <Text style={styles.header}>{data.title}</Text>
       </View>
       <View>
@@ -25,15 +29,15 @@ const Session = ({ speaker, data }) => {
       <View>
         <Text style={styles.fonts}>{data.description}</Text>
       </View>
-      <View>
-        <Text style={styles.subHeader}>Presented by:</Text>
-      </View>
-      <View>
-      <TouchableOpacity onPress={()=>goToSpeaker(speaker)}>
-        <Image style={styles.image} source={{ uri: speaker.image }} />
-        <Text style={styles.speakerFont}>{speaker.name}</Text>
-      </TouchableOpacity>
-      </View>
+      {speaker ?
+        <View>
+          <Text style={styles.subHeader}>Presented by:</Text>
+          <TouchableOpacity onPress={() => goToSpeaker(speaker)}>
+            <Image style={styles.image} source={{ uri: speaker.image }} />
+            <Text style={styles.speakerFont}>{speaker.name}</Text>
+          </TouchableOpacity>
+        </View>
+        : null}
     </View>
   );
 }

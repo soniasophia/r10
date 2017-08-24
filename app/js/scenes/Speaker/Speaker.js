@@ -10,7 +10,6 @@ import {
 
 import { goBack } from '../../lib/NavigationHelpers';
 import Icon from 'react-native-vector-icons/Ionicons';
-import Moment from 'moment';
 import { styles } from './styles.js';
 
 const Speaker = ({ data }) => {

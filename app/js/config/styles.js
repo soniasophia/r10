@@ -1,3 +1,4 @@
+import { Platform } from 'react-native';
 /** Global Styles
  */
 
@@ -12,7 +13,14 @@ export const colors = {
 //ios = Montserrat, Android = Montserrat-regular
 export const typography = {
   baseSize: 16,
-  fontMain: 'Montserrat',
+  ...Platform.select({
+    ios: {
+      fontMain: 'Montserrat'
+    },
+    android: {
+      fontMain: 'Montserrat-Regular'
+    }
+  }),
   fontMainLight: 'Montserrat-Light'
 };
 
@@ -23,3 +31,17 @@ export const linearGradient = {
   alignSelf: 'stretch',
   height: '100%'
 };
+
+export const selectedItemStyle = {
+  backgroundColor: '#e6e6e6'
+};
+
+export const titleText = {
+  fontWeight: 'bold',
+  color: '#999999',
+  paddingLeft: 10
+}
+
+export const selectedTitleText = {
+  color: '#9963ea'
+}

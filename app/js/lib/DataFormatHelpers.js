@@ -1,4 +1,4 @@
-// Helper to format format individual Firebase records
+// Helper to format individual Firebase records
 export const formatDataObject = (data) => {
   const dataObject = Object.getOwnPropertyNames(data).map(index => data[index]);
   return dataObject[0];
@@ -12,3 +12,11 @@ export const formatSessionData = (sessions) => {
     return acc;
   }, []).sort((a, b) => a.title - b.title);
 };
+
+// export const filterFaves = (data) => {
+//   faves = getFaves();
+//    const favourite_sessions = data.filter((item)=>{
+//     return faves.find(fave => fave.id === item.session_id)
+//   })
+//   return favourite_sessions;
+// }

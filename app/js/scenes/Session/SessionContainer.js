@@ -47,7 +47,7 @@ class SessionContainer extends Component {
   SessionContainer.propTypes = {
     isLoading: PropTypes.bool,
     dispatch: PropTypes.func.isRequired,
-    speakerData: PropTypes.object.isRequired
+    speakerData: PropTypes.object
   }
   
   export default connect(mapStateToProps)(SessionContainer);

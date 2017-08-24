@@ -35,8 +35,7 @@ class NavigationLayout extends Component {
 
   static route = {
     navigationBar: {
-      visible: false,
-      title: 'Navigation'
+      visible: false
     }
   }
 
