@@ -5,6 +5,7 @@ import {
 } from 'react-native';
 
 import Faves from './Faves';
+import { createFave, queryFave, removeFave } from '../../config/models';
 
 class FavesContainer extends Component {
 

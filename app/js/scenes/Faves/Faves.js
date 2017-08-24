@@ -1,12 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import {
-  Text,
-  StyleSheet,
-  FlatList,
-  Image,
-  View,
-  ScrollView
+  SectionList,
+  Text
 } from 'react-native';
 
 import { styles } from './styles.js';

@@ -15,3 +15,11 @@ export const typography = {
   fontMain: 'Montserrat',
   fontMainLight: 'Montserrat-Light'
 };
+
+export const linearGradient = {
+  flex: 1,
+  paddingLeft: 15,
+  paddingRight: 15,
+  alignSelf: 'stretch',
+  height: '100%'
+};
