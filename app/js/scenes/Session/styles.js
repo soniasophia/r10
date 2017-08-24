@@ -9,7 +9,7 @@ export const styles = StyleSheet.create({
 
   header: {
     fontWeight: 'bold',
-    fontSize: 18,
+    fontSize: 20,
     alignItems: 'flex-start',
     margin: 5,
     marginLeft: 15,
@@ -21,7 +21,8 @@ export const styles = StyleSheet.create({
     fontFamily: typography.fontMain,
     color: colors.mediumGrey,
     marginLeft: 15,
-    marginTop: 10
+    marginTop: 10,
+    fontSize: 15
   },
 
   time: {
@@ -43,7 +44,8 @@ export const styles = StyleSheet.create({
     width: 50,
     height: 50,
     borderRadius: 25,
-    marginLeft: 15
+    marginLeft: 15,
+    margin: 10
   },
 
   speaker: {
@@ -54,6 +56,7 @@ export const styles = StyleSheet.create({
   speakerFont: {
     fontFamily: typography.fontMain,
     color: 'black',
-    paddingLeft: 15
+    paddingLeft: 15,
+    fontSize: 15
   }
 })

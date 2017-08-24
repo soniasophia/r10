@@ -1,13 +1,18 @@
 import React from 'react';
-import { StyleSheet } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 
 const Separator = () => {
   return (
-    <View>
-    </View>
+  <View style={styles.separator}/>
   );
 }
 
 const styles = StyleSheet.create({
-
+  separator: {
+    flex: 1,
+    height: StyleSheet.hairlineWidth,
+    backgroundColor: '#8E8E8E'
+},
 });
+
+export default Separator;

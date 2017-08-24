@@ -5,11 +5,12 @@ import {
   View,
   SectionList,
   TouchableOpacity,
-  
+  ItemSeparatorComponent
 } from 'react-native';
 
 import Moment from 'moment';
 import { goToSession } from '../../lib/NavigationHelpers';
+import Separator from '../../components/Separator/';
 
 import { styles } from './styles.js';
 
@@ -26,6 +27,7 @@ const Schedule = ({ data }) => {
             </View>
           </TouchableOpacity>
         )}
+        ItemSeparatorComponent={() => <Separator />}
         renderSectionHeader={(item) => (
           <Text style={styles.time}>{Moment.unix(item.section.title).format('h:mm A')}</Text>
         )}

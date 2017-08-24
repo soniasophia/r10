@@ -6,10 +6,12 @@ import {
   FlatList,
   Image,
   View,
-  ScrollView
+  ScrollView,
+  ItemSeparatorComponent
 } from 'react-native';
 
 import { styles } from './styles.js';
+import Separator from '../../components/Separator/';
 
 
 const About = ({ data }) => {
@@ -20,6 +22,7 @@ const About = ({ data }) => {
           <Image
             source={require('.././../assets/images/r10_logo.png')} />
         </View>
+        <Separator />
         <View>
           <Text style={styles.header}>R10 is a conference that focuses on just about any topic related to dev.</Text>
         </View>
