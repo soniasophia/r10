@@ -36,6 +36,7 @@ export const styles = StyleSheet.create({
     fontFamily: typography.fontMainLight,
     color:'black',
     marginLeft: 15,
+    marginRight: 15,
     marginBottom: 20,
     fontSize: typography.baseSize
   },
@@ -58,5 +59,11 @@ export const styles = StyleSheet.create({
     color: 'black',
     paddingLeft: 15,
     fontSize: 15
+  },
+
+  heart: {
+    position: 'absolute',
+    top: 10,
+    right: 20
   }
 })

@@ -30,9 +30,9 @@ export const styles = StyleSheet.create({
     paddingLeft: 15
   },
 
-  // border: {
-  //   borderStyle: 'solid',
-  //   borderWidth: 0.5,
-  //   backgroundColor: colors.lightGrey
-  // }
-})
+  heart: {
+    position: 'absolute',
+    right: 10,
+    bottom: 4
+  }
+});

@@ -11,6 +11,7 @@ import {
 import Moment from 'moment';
 import { goToSession } from '../../lib/NavigationHelpers';
 import Separator from '../../components/Separator/';
+import FaveHeart from '../../components/FaveHeart/';
 
 import { styles } from './styles.js';
 
@@ -24,6 +25,9 @@ const Schedule = ({ data }) => {
             <View style={styles.container}>
               <Text style={styles.header}>{item.title}</Text>
               <Text style={styles.subHeader}>{item.location}</Text>
+              <View style={styles.heart}>
+              <FaveHeart/>
+              </View>
             </View>
           </TouchableOpacity>
         )}

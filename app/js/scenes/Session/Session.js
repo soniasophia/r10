@@ -11,6 +11,7 @@ import {
 import Moment from 'moment';
 import { goToSpeaker } from '../../lib/NavigationHelpers';
 import Icon from 'react-native-vector-icons/Ionicons';
+import FaveHeart from '../../components/FaveHeart/';
 import { createFave, deleteFave } from '../../config/models';
 
 import { styles } from './styles.js';
@@ -20,7 +21,9 @@ const Session = ({ speaker, data }) => {
     <View>
       <View>
         <Text style={styles.subHeader}>{data.location}</Text>
-        <Icon name={Platform.OS === 'ios' ? 'ios-heart' : 'md-heart'} size={20} color={'black'}/>
+        <View style={styles.heart}>
+        <FaveHeart/>
+        </View>
         <Text style={styles.header}>{data.title}</Text>
       </View>
       <View>

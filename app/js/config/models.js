@@ -10,6 +10,7 @@ const Fave = {
 }
 
 const realm = new Realm({schema: [Fave]});
+// console.log(realm.path);
 
 export const createFave = (faveId) => {
   realm.write(() => {

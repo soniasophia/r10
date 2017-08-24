@@ -31,6 +31,11 @@ const Speaker = ({ data }) => {
         <Text style={styles.name}>{data.name}</Text>
         <Text style={styles.bio}>{data.bio}</Text>
       </View>
+      <View>
+      {/* <TouchableOpacity onPress={() => }> */}
+        <Text>Read More on Wikipedia</Text>
+      {/* </TouchableOpacity> */}
+      </View>
     </ScrollView >
   );
 }
