@@ -3,16 +3,16 @@ import PropTypes from 'prop-types';
 import {
   Text,
   View,
-  SectionList,
+  Image,
   TouchableOpacity,
-
 } from 'react-native';
 
 import Moment from 'moment';
+import { goToSpeaker } from '../../lib/NavigationHelpers';
 
 import { styles } from './styles.js';
 
-const Session = ({ data }) => {
+const Session = ({ speaker, data }) => {
   return (
     <View>
       <View>
@@ -28,9 +28,14 @@ const Session = ({ data }) => {
       <View>
         <Text style={styles.subHeader}>Presented by:</Text>
       </View>
+      <View>
+      <TouchableOpacity onPress={()=>goToSpeaker(speaker)}>
+        <Image style={styles.image} source={{ uri: speaker.image }} />
+        <Text style={styles.speakerFont}>{speaker.name}</Text>
+      </TouchableOpacity>
+      </View>
     </View>
   );
-
 }
 
 Session.propTypes = {

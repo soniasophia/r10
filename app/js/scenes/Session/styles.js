@@ -20,8 +20,8 @@ export const styles = StyleSheet.create({
   subHeader: {
     fontFamily: typography.fontMain,
     color: colors.mediumGrey,
-    margin: 5,
-    marginLeft: 15
+    marginLeft: 15,
+    marginTop: 10
   },
 
   time: {
@@ -37,5 +37,23 @@ export const styles = StyleSheet.create({
     marginLeft: 15,
     marginBottom: 20,
     fontSize: typography.baseSize
+  },
+
+  image: {
+    width: 50,
+    height: 50,
+    borderRadius: 25,
+    marginLeft: 15
+  },
+
+  speaker: {
+    flex: 1,
+    flexDirection: 'row'
+  },
+
+  speakerFont: {
+    fontFamily: typography.fontMain,
+    color: 'black',
+    paddingLeft: 15
   }
 })

@@ -6,13 +6,12 @@ import {
 } from 'react-native';
 
 import Session from './Session';
-// import { fetchSessionData } from '../../redux/modules/session';
 import { fetchSpeakerData } from '../../redux/modules/speaker';
 
 class SessionContainer extends Component {
   
     componentDidMount() {
-      this.props.dispatch(fetchSpeakerData())
+      this.props.dispatch(fetchSpeakerData(this.props.sessionData.speaker))
     }
   
     static route = {
@@ -27,10 +26,11 @@ class SessionContainer extends Component {
           <ActivityIndicator animating={true} size="small" color="black" />
         );
       } else {
+        console.log(this.props.speakerData)
         return (
           <Session 
-          speakerData={this.props.speakerData}
           data={this.props.sessionData}
+          speaker={this.props.speakerData}
           />
         );
       }
@@ -46,9 +46,8 @@ class SessionContainer extends Component {
   
   SessionContainer.propTypes = {
     isLoading: PropTypes.bool,
-    data: PropTypes.arrayOf(PropTypes.object).isRequired,
     dispatch: PropTypes.func.isRequired,
-    speakerData: PropTypes.object
+    speakerData: PropTypes.object.isRequired
   }
   
   export default connect(mapStateToProps)(SessionContainer);

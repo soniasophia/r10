@@ -11,10 +11,11 @@ export function loadSpeaker(speaker) {
   }
 }
 
+
 // THUNK FUNCTION
-export function fetchSpeakerData() {
+export function fetchSpeakerData(speakerId) {
   return function(dispatch) {
-    fetch('https://r10app-95fea.firebaseio.com/speakers.json?orderBy="speaker_id"&equalTo="-KZ2o1CzG5GOfmURNSUB"')
+    fetch(`https://r10app-95fea.firebaseio.com/speakers.json?orderBy="speaker_id"&equalTo="${speakerId}"`)
     .then(response => response.json())
     .then(data => {
       const Data = formatDataObject(data)
@@ -34,6 +35,7 @@ export function speakerReducer(state = initialState, action) {
   switch (action.type) {
     case LOAD_SPEAKER:
       return {
+        ...state,
         data: action.payload,
         isLoading: false
       };
