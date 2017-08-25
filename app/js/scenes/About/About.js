@@ -12,6 +12,7 @@ import {
 
 import { styles } from './styles.js';
 import Separator from '../../components/Separator/';
+import ConductItem from '../../components/ConductItem/';
 
 
 const About = ({ data }) => {
@@ -38,10 +39,8 @@ const About = ({ data }) => {
         <FlatList
           data={data}
           renderItem={({ item }) =>
-            <View style={styles.container}>
-              <Text style={styles.headings}>+ {item.title}</Text>
-              <Text style={styles.header}>{item.description}</Text>
-            </View>}
+              <ConductItem data={item} />
+          }
           keyExtractor={(item, index) => index}
         />
         <Separator />

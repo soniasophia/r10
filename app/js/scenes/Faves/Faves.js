@@ -7,7 +7,7 @@ import {
 
 import { styles } from './styles.js';
 
-const Faves = () => {
+const Faves = ({faveData, faveIds}) => {
   return (
     <Text>Faves page</Text>
   );

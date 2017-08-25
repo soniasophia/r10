@@ -35,7 +35,7 @@ const Speaker = ({ speakerData }) => {
       </View>
       <View>
       <Button 
-        text='Read more on Wikipedia'
+        text='Read More on Wikipedia'
         onPress={() => Linking.openURL(speakerData.url).catch(err => ('An error occurred', err))}
       />
       </View>
