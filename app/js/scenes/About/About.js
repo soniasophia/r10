@@ -22,7 +22,7 @@ const About = ({ data }) => {
           <Image
             source={require('.././../assets/images/r10_logo.png')} />
         </View>
-        {/* <Separator /> */}
+        <Separator />
         <View>
           <Text style={styles.header}>R10 is a conference that focuses on just about any topic related to dev.</Text>
         </View>
@@ -44,6 +44,8 @@ const About = ({ data }) => {
             </View>}
           keyExtractor={(item, index) => index}
         />
+        <Separator />
+        <Text style={styles.header}>&copy; Red Academy 2017</Text>
       </View>
     </ScrollView>
   );

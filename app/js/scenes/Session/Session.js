@@ -23,6 +23,7 @@ const Session = ({ speaker, data }) => {
         <Text style={styles.subHeader}>{data.location}</Text>
         <View style={styles.heart}>
         <FaveHeart/>
+        {/* <Icon name={Platform.OS ==='ios'? 'ios-heart' : 'md-heart'} size={17} color={faved ? 'red' : 'black'} /> */}
         </View>
         <Text style={styles.header}>{data.title}</Text>
       </View>

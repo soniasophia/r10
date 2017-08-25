@@ -1,4 +1,5 @@
-import { formatSessionData } from '../../lib/DataFormatHelpers';
+import { formatSessionData, filterFaves } from '../../lib/DataFormatHelpers';
+import { queryFave } from '../../config/models';
 
 // ACTION CONSTANTS
 export const LOAD_FAVES = 'LOAD_FAVES'
@@ -14,7 +15,7 @@ export function loadFaves(faves) {
 // THUNK FUNCTION
 export function fetchFavesData() {
   return function(dispatch) {
-    fetch()
+    fetch('https://r10app-95fea.firebaseio.com/sessions.json')
     .then(response => response.json())
     .then(data => {
       const Data = formatSessionData(data)

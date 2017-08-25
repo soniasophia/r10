@@ -15,7 +15,7 @@ class FavesContainer extends Component {
       title: 'Faves',
     }
   }
-
+  
 
 
   render() {

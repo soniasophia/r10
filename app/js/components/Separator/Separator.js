@@ -9,9 +9,10 @@ const Separator = () => {
 
 const styles = StyleSheet.create({
   separator: {
-    flex: 1,
-    height: StyleSheet.hairlineWidth,
-    backgroundColor: '#8E8E8E'
+    borderBottomWidth: 1.5,
+    marginLeft: 10,
+    marginRight: 10,
+    borderColor: '#e6e6e6'
 },
 });
 

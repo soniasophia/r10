@@ -5,7 +5,7 @@ import { Platform } from 'react-native';
 
 const FaveHeart = () => {
   return (
-    <Icon name={Platform.OS === 'ios' ? 'ios-heart' : 'md-heart'} size={20} color={'black'}/>
+    <Icon name={Platform.OS === 'ios' ? 'ios-heart' : 'md-heart'} size={20} color={'red'}/>
   );
 }
 

@@ -1,3 +1,5 @@
+import { queryFave } from '../config/models';
+
 // Helper to format individual Firebase records
 export const formatDataObject = (data) => {
   const dataObject = Object.getOwnPropertyNames(data).map(index => data[index]);
@@ -13,10 +15,10 @@ export const formatSessionData = (sessions) => {
   }, []).sort((a, b) => a.title - b.title);
 };
 
-// export const filterFaves = (data) => {
-//   faves = getFaves();
-//    const favourite_sessions = data.filter((item)=>{
-//     return faves.find(fave => fave.id === item.session_id)
-//   })
-//   return favourite_sessions;
-// }
+export const filterFaves = (data) => {
+  let faves = queryFave();
+   const faved_sessions = data.filter((item)=> {
+    return faves.find(fave => fave.id === item.session_id)
+  });
+  return faved_sessions;
+}
