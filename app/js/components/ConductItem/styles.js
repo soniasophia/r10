@@ -14,7 +14,6 @@ export const styles = StyleSheet.create({
     },
   
     headerImage: {
-      // justifyContent: 'center'
       flexDirection: 'row',
       margin: 30,
       justifyContent: 'center',

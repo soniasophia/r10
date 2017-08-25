@@ -27,7 +27,7 @@ const ScheduleList = ({ data, faves, navigatorUID }) => {
               <Text style={styles.subHeader}>{item.location}</Text>
               <View>
                 {(faves.find(fave => fave === item.session_id)) ?
-                  <Icon name={Platform.OS === 'ios' ? 'ios-heart' : 'md-heart'} size={17} style={styles.heart}/>
+                  <Icon name={Platform.OS === 'ios' ? 'ios-heart' : 'md-heart'} size={17} style={styles.heart} />
                   : null}
               </View>
             </View>
@@ -41,6 +41,21 @@ const ScheduleList = ({ data, faves, navigatorUID }) => {
       />
     </View>
   );
+}
+
+ScheduleList.propTypes = {
+  data: PropTypes.arrayOf(PropTypes.shape({
+    description: PropTypes.string,
+    location: PropTypes.string,
+    session_id: PropTypes.string,
+    speaker: PropTypes.string,
+    start_time: PropTypes.number,
+    title: PropTypes.number
+  })),
+  title: PropTypes.number,
+  goToSession: PropTypes.func,
+  faves: PropTypes.arrayOf(PropTypes.string),
+  navigatorUID: PropTypes.string
 }
 
 export default ScheduleList;
