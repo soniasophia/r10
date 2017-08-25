@@ -33,7 +33,6 @@ export const styles = StyleSheet.create({
   heart: {
     position: 'absolute',
     right: 10,
-    bottom: 4,
-    color: colors.red
+    bottom: 4
   }
 });

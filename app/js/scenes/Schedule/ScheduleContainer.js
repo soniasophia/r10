@@ -31,10 +31,10 @@ class ScheduleContainer extends Component {
       );
     } else {
       return (
-        <Schedule 
-        goToSession={(e)=> {this.goToSession(e)}}
-        scheduleData={this.props.scheduleData}
-        faveIds={this.props.faveIds}
+        <Schedule
+          goToSession={(e) => { this.goToSession(e) }}
+          scheduleData={this.props.scheduleData}
+          faveIds={this.props.faveIds}
         />
       );
     }
@@ -43,9 +43,9 @@ class ScheduleContainer extends Component {
 
 function mapStateToProps(state) {
   return {
-      isLoading: state.session.isLoading,
-      scheduleData: state.session.data,
-      faveIds: state.faves.faveIds
+    isLoading: state.session.isLoading,
+    scheduleData: state.session.data,
+    faveIds: state.faves.faveIds
   }
 }
 
@@ -53,15 +53,15 @@ ScheduleContainer.propTypes = {
   isLoading: PropTypes.bool,
   scheduleData: PropTypes.arrayOf(PropTypes.shape({
     data: PropTypes.arrayOf(PropTypes.shape({
-        description: PropTypes.string,
-        location: PropTypes.string,
-        session_id: PropTypes.string,
-        speaker: PropTypes.string,
-        start_time: PropTypes.number,
-        title: PropTypes.string
+      description: PropTypes.string,
+      location: PropTypes.string,
+      session_id: PropTypes.string,
+      speaker: PropTypes.string,
+      start_time: PropTypes.number,
+      title: PropTypes.string
     })),
     title: PropTypes.number
-})),
+  })),
   dispatch: PropTypes.func.isRequired,
   faveIds: PropTypes.arrayOf(PropTypes.string)
 }

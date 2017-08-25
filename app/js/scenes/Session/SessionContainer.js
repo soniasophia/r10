@@ -51,14 +51,12 @@ SessionContainer.propTypes = {
   speakerData: PropTypes.objectOf(PropTypes.string),
   faveIds: PropTypes.arrayOf(PropTypes.string),
   sessionData: PropTypes.shape({
-    item: PropTypes.shape({
       description: PropTypes.string,
       location: PropTypes.string,
       session_id: PropTypes.string,
       speaker: PropTypes.string,
       start_time: PropTypes.number,
       title: PropTypes.string
-    })
   })
 };
 

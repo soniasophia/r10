@@ -5,17 +5,19 @@ import {
   View,
   SectionList,
   TouchableOpacity,
-  ItemSeparatorComponent
+  ItemSeparatorComponent,
+  Platform
 } from 'react-native';
 
 import Moment from 'moment';
 import { goToSession } from '../../lib/NavigationHelpers';
+import Icon from 'react-native-vector-icons/Ionicons';
 import Separator from '../../components/Separator/';
-import FaveHeart from '../../components/FaveHeart/';
+// import ScheduleList from '../../components/ScheduleList/';
 
 import { styles } from './styles.js';
 
-const Schedule = ({ scheduleData }) => {
+const Schedule = ({ scheduleData, faveIds }) => {
   return (
     <View>
       <SectionList
@@ -25,8 +27,10 @@ const Schedule = ({ scheduleData }) => {
             <View style={styles.container}>
               <Text style={styles.header}>{item.title}</Text>
               <Text style={styles.subHeader}>{item.location}</Text>
-              <View style={styles.heart}>
-              <FaveHeart/>
+              <View>
+                {(faveIds.find(fave => fave === item.session_id)) ?
+                  <Icon name={Platform.OS === 'ios' ? 'ios-heart' : 'md-heart'} size={17} style={styles.heart}/>
+                  : null}
               </View>
             </View>
           </TouchableOpacity>
@@ -37,12 +41,17 @@ const Schedule = ({ scheduleData }) => {
         )}
         sections={scheduleData}
       />
+      {/* <ScheduleList 
+      data={this.props.scheduleData}
+      faves={this.props.faveIds}
+      navigatorUID={'schedule'}
+      /> */}
     </View>
   );
 }
 
 Schedule.propTypes = {
-  data: PropTypes.arrayOf(PropTypes.shape({
+  scheduleData: PropTypes.arrayOf(PropTypes.shape({
       data: PropTypes.arrayOf(PropTypes.shape({
           description: PropTypes.string,
           location: PropTypes.string,
@@ -53,7 +62,8 @@ Schedule.propTypes = {
       })),
       title: PropTypes.number
   })),
-  goToSession: PropTypes.func.isRequired
+  goToSession: PropTypes.func,
+  faveIds: PropTypes.arrayOf(PropTypes.string)
 }
 
 export default Schedule;
