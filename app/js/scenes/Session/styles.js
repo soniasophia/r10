@@ -22,7 +22,7 @@ export const styles = StyleSheet.create({
     fontFamily: typography.fontMain,
     color: colors.mediumGrey,
     marginLeft: 15,
-    marginTop: 10,
+    marginTop: 20,
     fontSize: 15
   },
 
@@ -39,7 +39,8 @@ export const styles = StyleSheet.create({
     marginLeft: 15,
     marginRight: 15,
     marginBottom: 20,
-    fontSize: typography.baseSize
+    fontSize: typography.baseSize,
+    lineHeight: 25
   },
 
   image: {
@@ -51,22 +52,25 @@ export const styles = StyleSheet.create({
   },
 
   speaker: {
-    flex: 1,
-    flexDirection: 'row'
+    flexDirection: 'row',
+    alignItems: 'center'
   },
 
   speakerFont: {
     fontFamily: typography.fontMain,
     color: 'black',
-    paddingLeft: 15,
-    fontSize: 15,
-    marginBottom: 30
+    paddingLeft: 5,
+    fontSize: 15
   },
 
   heart: {
     position: 'absolute',
-    top: 10,
+    top: 20,
     right: 20,
     color: colors.red
+  },
+
+  headerWrapper: {
+    flexDirection: 'row'
   }
 })

@@ -22,13 +22,13 @@ const Session = ({ speakerData, sessionData, faveIds }) => {
 
   return (
     <View>
-      <View>
+      <View style={styles.headerWrapper}>
         <Text style={styles.subHeader}>{sessionData.location}</Text>
-        <View>
-          {(matchedFaveId) ? 
-          <Icon name={Platform.OS ==='ios'? 'ios-heart' : 'md-heart'} size={17} style={styles.heart} />
+        {(matchedFaveId) ?
+          <Icon name={Platform.OS === 'ios' ? 'ios-heart' : 'md-heart'} size={17} style={styles.heart} />
           : null}
-        </View>
+      </View>
+      <View>
         <Text style={styles.header}>{sessionData.title}</Text>
       </View>
       <View>
@@ -40,24 +40,26 @@ const Session = ({ speakerData, sessionData, faveIds }) => {
       {speakerData ?
         <View>
           <Text style={styles.subHeader}>Presented by:</Text>
-          <TouchableOpacity onPress={() => goToSpeaker(speakerData)}>
-            <Image style={styles.image} source={{ uri: speakerData.image }} />
-            <Text style={styles.speakerFont}>{speakerData.name}</Text>
-          </TouchableOpacity>
+            <TouchableOpacity onPress={() => goToSpeaker(speakerData)}>
+          <View style={styles.speaker}>
+              <Image style={styles.image} source={{ uri: speakerData.image }} />
+              <Text style={styles.speakerFont}>{speakerData.name}</Text>
+          </View>
+            </TouchableOpacity>
         </View>
         : null}
       <Separator />
-      <Button 
+      <Button
         text={
-          (matchedFaveId) 
-          ? "Remove from Faves" 
-          : "Add to Faves"
-          }
+          (matchedFaveId)
+            ? "Remove from Faves"
+            : "Add to Faves"
+        }
         onPress={
-          (matchedFaveId) 
-          ? () => removeFave(sessionData.session_id) 
-          : () => createFave(sessionData.session_id)
-          }
+          (matchedFaveId)
+            ? () => removeFave(sessionData.session_id)
+            : () => createFave(sessionData.session_id)
+        }
       />
     </View>
   );
