@@ -12,13 +12,13 @@ import Moment from 'moment';
 import { goToSpeaker } from '../../lib/NavigationHelpers';
 import Icon from 'react-native-vector-icons/Ionicons';
 import { createFave, removeFave } from '../../config/models';
-import FaveButton from '../../components/FaveButton/';
+import Button from '../../components/Button/';
 import Separator from '../../components/Separator/';
 
 import { styles } from './styles.js';
 
 const Session = ({ speakerData, sessionData, faveIds }) => {
-  const matchedFaveId = faveIds.find(item => item === sessionData.session_id)
+  const matchedFaveId = faveIds.find(faveId => faveId === sessionData.session_id)
 
   return (
     <View>
@@ -47,7 +47,7 @@ const Session = ({ speakerData, sessionData, faveIds }) => {
         </View>
         : null}
       <Separator />
-      <FaveButton 
+      <Button 
         text={
           (matchedFaveId) 
           ? "Remove from Faves" 

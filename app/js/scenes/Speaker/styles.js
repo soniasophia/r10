@@ -45,6 +45,7 @@ export const styles = StyleSheet.create({
   },
   bio: {
     fontFamily: typography.fontMainLight,
-    fontSize: 15
+    fontSize: typography.baseSize,
+    lineHeight: 30
   }
 })

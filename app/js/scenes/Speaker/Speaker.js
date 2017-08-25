@@ -5,14 +5,16 @@ import {
   View,
   Image,
   ScrollView,
-  TouchableOpacity
+  TouchableOpacity,
+  Linking
 } from 'react-native';
 
 import { goBack } from '../../lib/NavigationHelpers';
+import Button from '../../components/Button/';
 import Icon from 'react-native-vector-icons/Ionicons';
 import { styles } from './styles.js';
 
-const Speaker = ({ data }) => {
+const Speaker = ({ speakerData }) => {
   return (
     <ScrollView style={styles.container}>
       <View style={styles.titleContainer}>
@@ -26,15 +28,16 @@ const Speaker = ({ data }) => {
       <View style={styles.speakerContainer}>
         <Image
           style={styles.speakerImg}
-          source={{ uri: data.image }}
+          source={{ uri: speakerData.image }}
         />
-        <Text style={styles.name}>{data.name}</Text>
-        <Text style={styles.bio}>{data.bio}</Text>
+        <Text style={styles.name}>{speakerData.name}</Text>
+        <Text style={styles.bio}>{speakerData.bio}</Text>
       </View>
       <View>
-      {/* <TouchableOpacity onPress={() => }> */}
-        <Text>Read More on Wikipedia</Text>
-      {/* </TouchableOpacity> */}
+      <Button 
+        text='Read more on Wikipedia'
+        onPress={() => Linking.openURL(speakerData.url).catch(err => ('An error occurred', err))}
+      />
       </View>
     </ScrollView >
   );

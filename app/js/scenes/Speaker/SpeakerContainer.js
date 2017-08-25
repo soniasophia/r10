@@ -17,7 +17,7 @@ class SpeakerContainer extends Component {
     } else {
       return (
         <Speaker 
-        data={this.props.speakerData}/>
+        speakerData={this.props.speakerData}/>
       );
     }
   }
@@ -30,10 +30,10 @@ function mapStateToProps(state) {
   }
 }
 
-// SpeakerContainer.propTypes = {
-//   isLoading: PropTypes.bool,
-//   data: PropTypes.arrayOf(PropTypes.object).isRequired,
-//   dispatch: PropTypes.func.isRequired
-// }
+SpeakerContainer.propTypes = {
+  isLoading: PropTypes.bool,
+  speakerData: PropTypes.objectOf(PropTypes.string),
+  dispatch: PropTypes.func
+}
 
 export default connect(mapStateToProps)(SpeakerContainer);

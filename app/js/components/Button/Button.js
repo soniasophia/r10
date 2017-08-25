@@ -6,7 +6,7 @@ import { Text, TouchableOpacity } from 'react-native';
 import { styles } from './styles'
 import { colors } from '../../config/styles';
 
-const FaveButton = ({text, onPress}) => {
+const Button = ({text, onPress}) => {
   return (
     <TouchableOpacity onPress={onPress}>
       <LinearGradient
@@ -20,10 +20,10 @@ const FaveButton = ({text, onPress}) => {
   );
 }
 
-FaveButton.propTypes = {
+Button.propTypes = {
   text: PropTypes.string,
   onPress: PropTypes.func
 };
 
-export default FaveButton;
+export default Button;
 

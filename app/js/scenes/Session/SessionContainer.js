@@ -26,7 +26,6 @@ class SessionContainer extends Component {
         <ActivityIndicator animating={true} size="small" color="black" />
       );
     } else {
-      console.log(this.props.speakerData)
       return (
         <Session
           sessionData={this.props.sessionData}

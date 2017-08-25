@@ -6,10 +6,10 @@ export const SET_FAVES = 'SET_FAVES'
 export const SET_FAVEIDS = 'SET_FAVEIDS'
 
 // ACTION CREATORS
-export function setFaves(faves) {
+export function setFaves(faveData) {
   return {
     type: SET_FAVES,
-    payload: faves
+    payload: faveData
   }
 }
 
