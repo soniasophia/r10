@@ -13,6 +13,7 @@ export const styles = StyleSheet.create({
     alignItems: 'flex-start',
     margin: 5,
     marginLeft: 15,
+    marginTop: 15,
     fontFamily: typography.fontMain,
     color: 'black'
   },
@@ -42,9 +43,9 @@ export const styles = StyleSheet.create({
   },
 
   image: {
-    width: 50,
-    height: 50,
-    borderRadius: 25,
+    width: 60,
+    height: 60,
+    borderRadius: 30,
     marginLeft: 15,
     margin: 10
   },
@@ -58,12 +59,14 @@ export const styles = StyleSheet.create({
     fontFamily: typography.fontMain,
     color: 'black',
     paddingLeft: 15,
-    fontSize: 15
+    fontSize: 15,
+    marginBottom: 30
   },
 
   heart: {
     position: 'absolute',
     top: 10,
-    right: 20
+    right: 20,
+    color: colors.red
   }
 })

@@ -30,8 +30,8 @@ export function fetchFavesData() {
       const filterFaves = data.filter(item => faveData.find(fave => fave.id === item.session_id))
       const faveIds = filterFaves.map(fave => fave.session_id)
       dispatch(setFaveIds(faveIds))
-      const Data = formatSessionData(filterFaves)
-      dispatch(setFaves(Data))
+      const formattedData = formatSessionData(filterFaves)
+      dispatch(setFaves(formattedData))
     })
     .catch(error => console.log(`Error fetching JSON: ${error}`));
   };

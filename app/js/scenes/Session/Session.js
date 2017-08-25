@@ -11,46 +11,69 @@ import {
 import Moment from 'moment';
 import { goToSpeaker } from '../../lib/NavigationHelpers';
 import Icon from 'react-native-vector-icons/Ionicons';
-import FaveHeart from '../../components/FaveHeart/';
-import { createFave, deleteFave } from '../../config/models';
+import { createFave, removeFave } from '../../config/models';
 import FaveButton from '../../components/FaveButton/';
 import Separator from '../../components/Separator/';
 
 import { styles } from './styles.js';
 
-const Session = ({ speaker, data }) => {
+const Session = ({ speakerData, sessionData, faveIds }) => {
+  const matchedFaveId = faveIds.find(item => item === sessionData.session_id)
+
   return (
     <View>
       <View>
-        <Text style={styles.subHeader}>{data.location}</Text>
-        <View style={styles.heart}>
-        <FaveHeart/>
-        {/* <Icon name={Platform.OS ==='ios'? 'ios-heart' : 'md-heart'} size={17} color={faved ? 'red' : 'black'} /> */}
+        <Text style={styles.subHeader}>{sessionData.location}</Text>
+        <View>
+          {(matchedFaveId) ? 
+          <Icon name={Platform.OS ==='ios'? 'ios-heart' : 'md-heart'} size={17} style={styles.heart} />
+          : null}
         </View>
-        <Text style={styles.header}>{data.title}</Text>
+        <Text style={styles.header}>{sessionData.title}</Text>
       </View>
       <View>
-        <Text style={styles.time}>{Moment.unix(data.start_time).format('h:mm A')}</Text>
+        <Text style={styles.time}>{Moment.unix(sessionData.start_time).format('h:mm A')}</Text>
       </View>
       <View>
-        <Text style={styles.fonts}>{data.description}</Text>
+        <Text style={styles.fonts}>{sessionData.description}</Text>
       </View>
-      {speaker ?
+      {speakerData ?
         <View>
           <Text style={styles.subHeader}>Presented by:</Text>
-          <TouchableOpacity onPress={() => goToSpeaker(speaker)}>
-            <Image style={styles.image} source={{ uri: speaker.image }} />
-            <Text style={styles.speakerFont}>{speaker.name}</Text>
+          <TouchableOpacity onPress={() => goToSpeaker(speakerData)}>
+            <Image style={styles.image} source={{ uri: speakerData.image }} />
+            <Text style={styles.speakerFont}>{speakerData.name}</Text>
           </TouchableOpacity>
         </View>
         : null}
-        <Separator />
+      <Separator />
+      <FaveButton 
+        text={
+          (matchedFaveId) 
+          ? "Remove from Faves" 
+          : "Add to Faves"
+          }
+        onPress={
+          (matchedFaveId) 
+          ? () => removeFave(sessionData.session_id) 
+          : () => createFave(sessionData.session_id)
+          }
+      />
     </View>
   );
 }
 
 Session.propTypes = {
-  // data: PropTypes.arrayOf(PropTypes.object).isRequired
+  speakerData: PropTypes.objectOf(PropTypes.string),
+  faveIds: PropTypes.arrayOf(PropTypes.string),
+  sessionData: PropTypes.shape({
+    description: PropTypes.string,
+    location: PropTypes.string,
+    session_id: PropTypes.string,
+    speaker: PropTypes.string,
+    start_time: PropTypes.number,
+    title: PropTypes.string
+  })
 }
 
 export default Session;
