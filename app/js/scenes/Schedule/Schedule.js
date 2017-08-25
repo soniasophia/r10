@@ -15,7 +15,7 @@ import FaveHeart from '../../components/FaveHeart/';
 
 import { styles } from './styles.js';
 
-const Schedule = ({ data }) => {
+const Schedule = ({ scheduleData }) => {
   return (
     <View>
       <SectionList
@@ -35,7 +35,7 @@ const Schedule = ({ data }) => {
         renderSectionHeader={(item) => (
           <Text style={styles.time}>{Moment.unix(item.section.title).format('h:mm A')}</Text>
         )}
-        sections={data}
+        sections={scheduleData}
       />
     </View>
   );

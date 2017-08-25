@@ -44,7 +44,7 @@ const Speaker = ({ speakerData }) => {
 }
 
 Speaker.propTypes = {
-  // data: PropTypes.arrayOf(PropTypes.object).isRequired
+  speakerData: PropTypes.objectOf(PropTypes.string)
 }
 
 export default Speaker;

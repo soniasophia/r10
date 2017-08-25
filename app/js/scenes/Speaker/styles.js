@@ -40,7 +40,7 @@ export const styles = StyleSheet.create({
   },
   name: {
     fontFamily: typography.fontMain,
-    fontSize: 22,
+    fontSize: 30,
     marginBottom: 20
   },
   bio: {
