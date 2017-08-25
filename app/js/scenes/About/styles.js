@@ -33,5 +33,5 @@ export const styles = StyleSheet.create({
       fontWeight: 'bold',
       color: '#9963ea',
       fontFamily: typography.fontMain
-    }
+    },
 });

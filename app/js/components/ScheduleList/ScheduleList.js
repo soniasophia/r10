@@ -21,13 +21,13 @@ const ScheduleList = ({ data, faves, navigatorUID }) => {
       <SectionList
         keyExtractor={(item) => (item.session_id)}
         renderItem={({ item }) => (
-          <TouchableOpacity onPress={() => goToSession("schedule", item)}>
+          <TouchableOpacity onPress={() => goToSession(navigatorUID, item)}>
             <View style={styles.container}>
               <Text style={styles.header}>{item.title}</Text>
               <Text style={styles.subHeader}>{item.location}</Text>
-              <View style={styles.heart}>
+              <View>
                 {(faves.find(fave => fave === item.session_id)) ?
-                  <Icon name={Platform.OS === 'ios' ? 'ios-heart' : 'md-heart'} size={17} />
+                  <Icon name={Platform.OS === 'ios' ? 'ios-heart' : 'md-heart'} size={17} style={styles.heart}/>
                   : null}
               </View>
             </View>

@@ -32,7 +32,7 @@ class ScheduleContainer extends Component {
     } else {
       return (
         <Schedule
-          goToSession={(e) => { this.goToSession(e) }}
+          goToSession={() => { this.goToSession() }}
           scheduleData={this.props.scheduleData}
           faveIds={this.props.faveIds}
         />
