@@ -18,25 +18,52 @@ class ConductItem extends Component {
 
     this.state = {
       display: false,
-      rotate: new Animated.Value(0)
+      spin: new Animated.Value(0)
     }
   }
 
-  onPress = () => {
+  expandItem = () => {
+    this.spin();
     LayoutAnimation.easeInEaseOut();
-    this.setState({display: !this.state.display})
+    this.setState({ display: !this.state.display })
   }
-  
+
+  spin = () => {
+    this.state.spin.setValue(0);
+
+    Animated.timing(
+      this.state.spin,
+      { toValue: 1, duration: 1000 }
+    ).start();
+  }
+
 
   render() {
+
+    let spin = this.state.spin.interpolate({
+      inputRange: [0, 1],
+      outputRange: ['0deg', '180deg']
+    });
+
+    let animatedStyle = {
+      transform: [
+        { rotate: spin }
+      ],
+    }
+
     return (
+      <View>
+        <TouchableOpacity onPress={this.expandItem}>
+          <View style={styles.conductWrapper}>
+            <Animated.Text style={[animatedStyle, styles.title]}> {this.state.display ? '-' : '+'}</Animated.Text>
+            <Text style={styles.title}>{this.props.data.title}</Text>
+          </View>
+        </TouchableOpacity>
         <View>
-          <TouchableOpacity onPress={this.onPress}>
-          <Text style={styles.headings}> {this.state.display ? '-' : '+'} {this.props.data.title}</Text>
-          </TouchableOpacity>
           {this.state.display &&
-          <Text style={styles.header}>{this.props.data.description}</Text>}
+            <Text style={styles.header}>{this.props.data.description}</Text>}
         </View>
+      </View>
     );
   }
 }
