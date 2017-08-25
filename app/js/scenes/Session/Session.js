@@ -13,6 +13,8 @@ import { goToSpeaker } from '../../lib/NavigationHelpers';
 import Icon from 'react-native-vector-icons/Ionicons';
 import FaveHeart from '../../components/FaveHeart/';
 import { createFave, deleteFave } from '../../config/models';
+import FaveButton from '../../components/FaveButton/';
+import Separator from '../../components/Separator/';
 
 import { styles } from './styles.js';
 
@@ -42,6 +44,7 @@ const Session = ({ speaker, data }) => {
           </TouchableOpacity>
         </View>
         : null}
+        <Separator />
     </View>
   );
 }

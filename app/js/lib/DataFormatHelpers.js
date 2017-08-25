@@ -14,11 +14,3 @@ export const formatSessionData = (sessions) => {
     return acc;
   }, []).sort((a, b) => a.title - b.title);
 };
-
-export const filterFaves = (data) => {
-  let faves = queryFave();
-   const faved_sessions = data.filter((item)=> {
-    return faves.find(fave => fave.id === item.session_id)
-  });
-  return faved_sessions;
-}
