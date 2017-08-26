@@ -61,7 +61,7 @@ class ConductItem extends Component {
         </TouchableOpacity>
         <View>
           {this.state.display &&
-            <Text style={styles.header}>{this.props.data.description}</Text>}
+            <Text style={styles.description}>{this.props.data.description}</Text>}
         </View>
       </View>
     );

@@ -8,9 +8,10 @@ export const styles = StyleSheet.create({
       marginTop: 20,
     },
 
-    header: {
+    description: {
       margin: 10,
-      fontFamily: typography.fontMainLight
+      fontFamily: typography.fontMainLight,
+      lineHeight: 25
     },
   
     headerImage: {

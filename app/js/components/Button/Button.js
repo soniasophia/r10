@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import LinearGradient from 'react-native-linear-gradient';
-import { createFave, removeFave } from '../../config/models';
 import { Text, TouchableOpacity } from 'react-native';
 import { styles } from './styles'
 import { colors } from '../../config/styles';

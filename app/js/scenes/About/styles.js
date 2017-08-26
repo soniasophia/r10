@@ -10,7 +10,8 @@ export const styles = StyleSheet.create({
 
     header: {
       margin: 10,
-      fontFamily: typography.fontMainLight
+      fontFamily: typography.fontMainLight,
+      lineHeight: 25
     },
   
     headerImage: {
