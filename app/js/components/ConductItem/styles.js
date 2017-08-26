@@ -35,7 +35,8 @@ export const styles = StyleSheet.create({
     },
 
     conductWrapper: {
-      flexDirection: 'row'
+      flexDirection: 'row',
+      alignItems: 'flex-start'
     },
 
     title: {

@@ -2,8 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import ScheduleList from '../../components/ScheduleList/';
 
-import { styles } from './styles.js';
-
 const Faves = ({faveData, faveIds}) => {
   return (
     <ScheduleList 

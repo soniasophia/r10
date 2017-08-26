@@ -1,16 +1,19 @@
 import React, { Component } from 'react';
-import { MapView } from 'react-native';
-
+import Map from './Map';
 
 class MapContainer extends Component {
-  render() {
-    return (
-      <MapView
-        style={{height: 200, margin: 40}}
-        showsUserLocation={true}
-      />
-    );
-  }
+
+    static route = {
+        navigationBar: {
+            title: 'Map',
+        }
+    }
+
+    render() {
+        return (
+            <Map />
+        );
+    }
 }
 
 export default MapContainer;

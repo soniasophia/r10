@@ -14,7 +14,6 @@ export const styles = StyleSheet.create({
     },
   
     headerImage: {
-      // justifyContent: 'center'
       flexDirection: 'row',
       margin: 30,
       justifyContent: 'center',
@@ -23,7 +22,7 @@ export const styles = StyleSheet.create({
   
     fonts: {
       fontWeight: 'bold',
-      fontSize: 18,
+      fontSize: typography.baseSize,
       alignItems: 'flex-start',
       margin: 10,
       fontFamily: typography.fontMain
