@@ -37,32 +37,32 @@ const Session = ({ speakerData, sessionData, faveIds }) => {
       <View>
         <Text style={styles.fonts}>{sessionData.description}</Text>
       </View>
-      {speakerData ?
+      {(speakerData) ?
         <View>
           <Text style={styles.subHeader}>Presented by:</Text>
-            <TouchableOpacity onPress={() => goToSpeaker(speakerData)}>
-          <View style={styles.speaker}>
+          <TouchableOpacity onPress={() => goToSpeaker(speakerData)}>
+            <View style={styles.speaker}>
               <Image style={styles.image} source={{ uri: speakerData.image }} />
               <Text style={styles.speakerFont}>{speakerData.name}</Text>
-          </View>
-            </TouchableOpacity>
+            </View>
+          </TouchableOpacity>
         </View>
         : null}
       <Separator />
       {(speakerData) ?
-      <Button
-        text={
-          (matchedFaveId)
-            ? "Remove from Faves"
-            : "Add to Faves"
-        }
-        onPress={
-          (matchedFaveId)
-            ? () => removeFave(sessionData.session_id)
-            : () => createFave(sessionData.session_id)
-        }
-      />
-      : null}
+        <Button
+          text={
+            (matchedFaveId)
+              ? "Remove from Faves"
+              : "Add to Faves"
+          }
+          onPress={
+            (matchedFaveId)
+              ? () => removeFave(sessionData.session_id)
+              : () => createFave(sessionData.session_id)
+          }
+        />
+        : null}
     </View>
   );
 }

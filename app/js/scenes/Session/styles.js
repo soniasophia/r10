@@ -12,7 +12,8 @@ export const styles = StyleSheet.create({
     fontSize: 20,
     alignItems: 'flex-start',
     margin: 5,
-    marginLeft: 15,
+    marginLeft: 20,
+    marginRight: 15,
     marginTop: 15,
     fontFamily: typography.fontMain,
     color: 'black'
@@ -21,7 +22,7 @@ export const styles = StyleSheet.create({
   subHeader: {
     fontFamily: typography.fontMain,
     color: colors.mediumGrey,
-    marginLeft: 15,
+    marginLeft: 20,
     marginTop: 20,
     fontSize: 15
   },
@@ -29,14 +30,15 @@ export const styles = StyleSheet.create({
   time: {
     fontFamily: typography.fontMain,
     color: 'red',
-    padding: 10,
-    paddingLeft: 15
+    marginTop: 10,
+    marginBottom: 10,
+    marginLeft: 20
   },
 
   fonts: {
     fontFamily: typography.fontMainLight,
     color:'black',
-    marginLeft: 15,
+    marginLeft: 20,
     marginRight: 15,
     marginBottom: 20,
     fontSize: typography.baseSize,
@@ -47,7 +49,7 @@ export const styles = StyleSheet.create({
     width: 60,
     height: 60,
     borderRadius: 30,
-    marginLeft: 15,
+    marginLeft: 20,
     margin: 10
   },
 
