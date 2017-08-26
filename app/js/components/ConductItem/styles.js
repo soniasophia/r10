@@ -42,6 +42,6 @@ export const styles = StyleSheet.create({
 
     title: {
       color: colors.purple,
-      margin: 5
+      margin: 10
     }
 });
