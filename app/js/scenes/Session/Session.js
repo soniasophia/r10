@@ -49,6 +49,7 @@ const Session = ({ speakerData, sessionData, faveIds }) => {
         </View>
         : null}
       <Separator />
+      {(speakerData) ?
       <Button
         text={
           (matchedFaveId)
@@ -61,6 +62,7 @@ const Session = ({ speakerData, sessionData, faveIds }) => {
             : () => createFave(sessionData.session_id)
         }
       />
+      : null}
     </View>
   );
 }
