@@ -20,3 +20,9 @@ Android
 - Redux
 - Redux Thunk
 - React Native Vector Icons
+
+### Personal Learnings
+- Learned how to use React Native specific components and styling techniques
+- Learned how to use Layout Animation and other Animation techniques
+- Learned how to push and pop scenes in the stack
+- Learned how to conditionally render components based on platform used
