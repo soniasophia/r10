@@ -6,9 +6,11 @@ Your project must be cross-platform (iOS/Android) and contain a database (Realm)
 
 ## Screens
 iOS
+
 ![R10 for iOS](https://preview.ibb.co/dhFAj5/R10_iOS.jpg)
 
 Android
+
 ![R10 for Android](https://preview.ibb.co/iDHjBk/R10_Android.jpg)
 ## Technologies Used
 - React

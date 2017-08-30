@@ -14,7 +14,7 @@ export const styles = StyleSheet.create({
     buttonText: {
         color: 'white',
         fontFamily: typography.fontMain,
-        fontSize: 18,
+        fontSize: 15,
         backgroundColor: 'transparent'
     }
 });

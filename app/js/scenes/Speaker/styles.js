@@ -11,16 +11,17 @@ export const styles = StyleSheet.create({
   },
   titleContainer: {
     flexDirection: 'row',
-    justifyContent: 'flex-start',
+    justifyContent: 'space-between',
     alignItems: 'center',
-    paddingTop: 40
+    paddingTop: 40,
+    width: '70%'
   },
   aboutSpeaker: {
     fontSize: 16,
-    marginLeft: 60,
+
     marginBottom: 5,
     fontFamily: typography.fontMain,
-    color: colors.white
+    color: 'white',
   },
   backbutton: {
     marginLeft: 15
