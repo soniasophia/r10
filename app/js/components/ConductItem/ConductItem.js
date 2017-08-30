@@ -6,7 +6,8 @@ import {
   Animated,
   TouchableOpacity,
   LayoutAnimation,
-  FlatList
+  Platform,
+  UIManager
 } from 'react-native';
 
 import { styles } from './styles';
@@ -14,6 +15,11 @@ import { styles } from './styles';
 
 class ConductItem extends Component {
   constructor() {
+    if (Platform.OS === 'android') {
+      UIManager.setLayoutAnimationEnabledExperimental
+        && UIManager.setLayoutAnimationEnabledExperimental(true);
+    }
+    
     super();
 
     this.state = {
