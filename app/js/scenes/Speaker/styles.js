@@ -18,7 +18,6 @@ export const styles = StyleSheet.create({
   },
   aboutSpeaker: {
     fontSize: 16,
-
     marginBottom: 5,
     fontFamily: typography.fontMain,
     color: 'white',
