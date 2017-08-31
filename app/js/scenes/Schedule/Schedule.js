@@ -1,21 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {
-  Text,
-  View,
-  SectionList,
-  TouchableOpacity,
-  ItemSeparatorComponent,
-  Platform
+  View
 } from 'react-native';
 
-import Moment from 'moment';
-import { goToSession } from '../../lib/NavigationHelpers';
-import Icon from 'react-native-vector-icons/Ionicons';
-import Separator from '../../components/Separator/';
 import ScheduleList from '../../components/ScheduleList/';
 
-import { styles } from './styles.js';
 
 const Schedule = ({ scheduleData, faveIds }) => {
   return (

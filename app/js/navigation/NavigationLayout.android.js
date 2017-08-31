@@ -8,7 +8,7 @@ import {
 
 import { Text } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
-import { colors, typography, linearGradient, selectedItemStyle, titleText, selectedTitleText } from '../config/styles';
+import { colors, typography, linearGradient, selectedItemStyle } from '../config/styles';
 import LinearGradient from 'react-native-linear-gradient';
 
 const defaultRouteConfig = {
@@ -124,6 +124,5 @@ class NavigationLayout extends Component {
   }
 
 }
-
 
 export default NavigationLayout;

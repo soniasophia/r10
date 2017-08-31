@@ -1,7 +1,6 @@
 import React from 'react';
 import MapView from 'react-native-maps';
 import { styles } from './styles';
-import { View } from 'react-native';
 
 
 const Map = () => {
