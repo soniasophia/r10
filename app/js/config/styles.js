@@ -18,7 +18,7 @@ export const typography = {
       fontMain: 'Montserrat'
     },
     android: {
-      fontMain: 'Montserrat-Regular'
+      fontMain: 'Montserrat-regular'
     }
   }),
   fontMainLight: 'Montserrat-Light'
